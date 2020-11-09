@@ -1,15 +1,38 @@
-import React from 'react';
-import Listpage from './page/listPage'
+import React, { Component } from 'react';
+import { HashRouter, Route, Switch, withRouter } from 'react-router-dom';
+import Header from './page/header';
+import Listpage from './page/listPage';
+import Editor from './page/editor';
 import './App.css';
-import './styles/test.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <p>11111</p>
-      <Listpage/>
-    </div>
-  );
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+  };
+
+
+  componentDidMount() {
+    console.log(this.props.history)
+
+    const {listen} = this.props.history
+
+    listen(route =>{
+      console.log('route', route)
+    })
+  }
+  render() {
+    return (
+      <div className='contanier'>
+        <Header />
+        <Switch>
+          <Route path='/' exact component={Listpage}></Route>
+          <Route path='/editor' exact component={Editor}></Route>
+          <Route path='/list' exact component={Listpage}></Route>
+        </Switch>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default withRouter(App);
