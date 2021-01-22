@@ -1,4 +1,4 @@
-import React, {PureComponent, Component} from 'react'
+import React, { PureComponent, Component } from 'react'
 
 class TestPureComponent extends PureComponent {
   constructor() {
@@ -6,7 +6,6 @@ class TestPureComponent extends PureComponent {
     this.state = {
       isShow: false
     };
-    console.log('constructor');
   }
   changeState = () => {
     this.setState({
@@ -14,7 +13,6 @@ class TestPureComponent extends PureComponent {
     })
   };
   render() {
-    console.log('render');
     return (
       <div>
         <button onClick={this.changeState}>点击</button>
