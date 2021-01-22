@@ -13,11 +13,9 @@ class App extends Component {
 
 
   componentDidMount() {
-    console.log(this.props.history)
+    const { listen } = this.props.history
 
-    const {listen} = this.props.history
-
-    listen(route =>{
+    listen(route => {
       console.log('route', route)
     })
   }
