@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import Header from './page/header';
 import Listpage from './page/listPage';
 import Editor from './page/editor';
 import './App.css';
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-  };
-
 
   componentDidMount() {
     const { listen } = this.props.history

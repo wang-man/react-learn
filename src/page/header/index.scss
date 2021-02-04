@@ -1,11 +1,6 @@
-.header{
-  b{
-    color: #f50;
-    .listpage & {
-      color: orange;
-    }
-    .listpage2 & {
-      color: blue;
-    }
+.header {
+  .active {
+    font-weight: bold;
   }
+
 }
