@@ -1,10 +1,16 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
 import { getHomeData } from './store/actions';
 import './index.scss';
 import one from '../../assets/img/1.png'
 class Editor extends Component {
+  constructor(props) {
+    super();
+    console.log(props)
+    console.log(props.location)
+  }
   render() {
     return (
       <Fragment>
@@ -24,4 +30,4 @@ const mapDispatchToProps = {
 }
 
 
-export default connect(null, mapDispatchToProps)(Editor)
+export default connect(null, mapDispatchToProps)(withRouter(Editor))

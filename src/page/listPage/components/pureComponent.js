@@ -1,25 +1,17 @@
-import React, { PureComponent, Component } from 'react'
+import React, { PureComponent } from 'react'
+import { withRouter } from 'react-router-dom'
 
 class TestPureComponent extends PureComponent {
-  constructor() {
-    super();
-    this.state = {
-      isShow: false
-    };
-  }
-  changeState = () => {
-    this.setState({
-      isShow: true
-    })
-  };
   render() {
+    const { userInfo } = this.props;
+
+    console.log(userInfo);
     return (
       <div>
-        <button onClick={this.changeState}>点击</button>
-        <div>{this.state.isShow.toString()}</div>
+        这是纯组件
       </div>
     );
   }
 }
 
-export default TestPureComponent
+export default withRouter(TestPureComponent)

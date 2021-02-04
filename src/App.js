@@ -8,11 +8,6 @@ import './App.css';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-  };
-
-
   componentDidMount() {
     const { listen } = this.props.history
 
