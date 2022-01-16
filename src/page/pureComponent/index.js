@@ -1,3 +1,4 @@
+// 这个组件用来练习pureComponent的用法
 import React, { PureComponent, Component } from 'react'
 
 class TestPureComponent extends PureComponent {

@@ -1,12 +1,12 @@
 import React, { Fragment, Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import './index.scss';
+import headerStyle from './index.module.scss';
 
 class Header extends Component {
   render() {
     return (
-      <div>
+      <div className={headerStyle.nav}>
         <ul>
           <li>
             <NavLink to='/editor' activeClassName='active'>编辑器</NavLink>

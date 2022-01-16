@@ -3,15 +3,15 @@ import { HashRouter, Route, Switch, withRouter } from 'react-router-dom';
 import loadAble from '@loadable/component'
 import Header from './page/header';
 import Listpage from './page/listPage';
+import UseMemo from './page/useMemo';
+import UseForwardRef from './page/useForwardRef';
 // import Editor from './page/editor';
-import './App.css';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
   };
-
 
   componentDidMount() {
     const { listen } = this.props.history
@@ -27,8 +27,9 @@ class App extends Component {
         <Switch>
           <Route path='/' exact component={Listpage}></Route>
           <Route path='/editor' exact component={loadAble(() => import('./page/editor'))}></Route>
-          {/* <Route path='/editor' exact component={Editor}></Route> */}
           <Route path='/list' exact component={Listpage}></Route>
+          <Route path='/useMemo' exact component={UseMemo}></Route>
+          <Route path='/useForwardRef' exact component={UseForwardRef}></Route>
         </Switch>
       </div>
     )
