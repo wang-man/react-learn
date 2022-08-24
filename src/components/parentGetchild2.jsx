@@ -40,7 +40,9 @@ class Parent extends React.Component {
   render() {
     return (
       <div className="component">
-        <h2>class组件，父组件获取子组件状态、调用子组件方法：传入this</h2>
+        <h2>
+          class组件，父组件获取子组件状态、调用子组件方法：传给子组件一个函数，函数中将子组件自己父组件的一个变量
+        </h2>
         <button
           onClick={this.clickHandle} // 调用子组件的方法
         >
