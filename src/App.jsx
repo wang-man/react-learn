@@ -3,6 +3,8 @@ import UseImperativeHandleComponent from "./components/useImperativeHandle";
 import ParentGetchild from "./components/parentGetchild.jsx";
 import ParentGetchildTwo from "./components/parentGetchild2.jsx";
 import Key from "./components/key";
+import UseMemo from "./components/useMemo";
+import { FunComp, ClassComp } from "./components/useState";
 
 const fakeAccounts = [
   {
@@ -18,14 +20,16 @@ const fakeAccounts = [
 ];
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <UseImperativeHandleComponent />
       <ParentGetchild />
       <ParentGetchildTwo />
+      <ParentGetchildTwo />
       <Key accounts={fakeAccounts} />
+      <UseMemo />
+      <FunComp />
+      <ClassComp />
     </div>
   );
 }
