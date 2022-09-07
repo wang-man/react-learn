@@ -5,6 +5,7 @@ import ParentGetchildTwo from "./components/parentGetchild2.jsx";
 import Key from "./components/key";
 import UseMemo from "./components/useMemo";
 import { FunComp, ClassComp } from "./components/useState";
+import UseLayoutEffect from "./components/useLayoutEffect";
 
 const fakeAccounts = [
   {
@@ -30,6 +31,7 @@ function App() {
       <UseMemo />
       <FunComp />
       <ClassComp />
+      <UseLayoutEffect />
     </div>
   );
 }
