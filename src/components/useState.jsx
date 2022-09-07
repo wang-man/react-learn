@@ -18,23 +18,29 @@ function FunComp() {
   };
   const increase3 = () => {
     setTimeout(() => {
-      setPrice(price + 1);
-      setPrice(price + 1);
+      setPrice(price + 1); // 连续点击，不会按点击次数增加
+      console.log("price", price); // 总是比实际要慢，react18
     }, 2000);
   };
   const increase4 = () => {
     setTimeout(() => {
       setPrice((prev) => {
-        return prev + 1;
+        return prev + 1; // 连续点击，会按点击次数增加
       });
+      console.log("price", price); // 总是比实际要慢
     }, 2000);
   };
 
   return (
     <div className="component">
       <h2>演示函数组件中useState不同的用法</h2>
-      <button onClick={increase4}>价钱+1： {price}</button>
+      <button onClick={increase3}>价钱+1： {price}</button>
       <div>演示useState异步的问题及其不同用法</div>
+      <div>
+        React
+        18新加入自动批处理功能，React会将多个状态，更新到单一的重新渲染作业中，以获得更好的性能，过去没有自动批处理，开发者只能在React事件处理程序中批处理更新，而在默认状态下，Promise、setTimeout、原生事件处理程序，或任何React内部事件的更新，都不会以批处理，而在React
+        18中，这些更新都将可以自动批处理。
+      </div>
     </div>
   );
 }
