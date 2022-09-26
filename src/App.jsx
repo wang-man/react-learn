@@ -1,28 +1,29 @@
-import { useState } from "react";
-import UseImperativeHandleComponent from "./components/useImperativeHandle";
-import ParentGetchild from "./components/parentGetchild.jsx";
-import ParentGetchildTwo from "./components/parentGetchild2.jsx";
-import Key from "./components/key";
-import UseMemo from "./components/useMemo";
-import { FunComp, ClassComp } from "./components/useState";
-import UseLayoutEffect from "./components/useLayoutEffect";
+import { useState } from 'react';
+import UseImperativeHandleComponent from './components/useImperativeHandle';
+import ParentGetchild from './components/parentGetchild.jsx';
+import ParentGetchildTwo from './components/parentGetchild2.jsx';
+import Key from './components/key';
+import UseMemo from './components/useMemo';
+import { FunComp, ClassComp } from './components/useState';
+import UseLayoutEffect from './components/useLayoutEffect';
+import CreatePortal from './components/createPortal';
 
 const fakeAccounts = [
   {
     id: 1,
-    name: "One",
-    email: "fake.email@example.com",
+    name: 'One',
+    email: 'fake.email@example.com',
   },
   {
     id: 2,
-    name: "Two",
-    email: "fake.email@example.com",
+    name: 'Two',
+    email: 'fake.email@example.com',
   },
 ];
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <UseImperativeHandleComponent />
       <ParentGetchild />
       <ParentGetchildTwo />
@@ -32,6 +33,7 @@ function App() {
       <FunComp />
       <ClassComp />
       <UseLayoutEffect />
+      <CreatePortal />
     </div>
   );
 }
