@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import UseImperativeHandleComponent from './components/useImperativeHandle';
 import ParentGetchild from './components/parentGetchild.jsx';
 import ParentGetchildTwo from './components/parentGetchild2.jsx';
@@ -7,6 +6,7 @@ import UseMemo from './components/useMemo';
 import { FunComp, ClassComp } from './components/useState';
 import UseLayoutEffect from './components/useLayoutEffect';
 import CreatePortal from './components/createPortal';
+import SyncUseState from './components/同步useState';
 
 const fakeAccounts = [
   {
@@ -21,9 +21,11 @@ const fakeAccounts = [
   },
 ];
 
-function App() {
+function App(props) {
   return (
     <div className='App'>
+      <h1>当演示17、18不同版本的差异的时候注意查看main.jsx中对不同版本的正确使用</h1>
+      <div className='react-version'>当前react渲染模式：{props.reactVersion}</div>
       <UseImperativeHandleComponent />
       <ParentGetchild />
       <ParentGetchildTwo />
@@ -34,6 +36,7 @@ function App() {
       <ClassComp />
       <UseLayoutEffect />
       <CreatePortal />
+      <SyncUseState />
     </div>
   );
 }

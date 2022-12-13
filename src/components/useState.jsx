@@ -56,11 +56,15 @@ class ClassComp extends Component {
     this.setState({
       price: this.state.price + 1,
     });
+    console.log("price", this.state.price); // 18版本以下在setTimeou或原生DOM事件中是同步的
   };
   increase2 = () => {
     setTimeout(() => {
       this.setState({
-        price: 1000,
+        price: this.state.price + 1,
+      });
+      this.setState({
+        price: this.state.price + 1,
       });
       console.log("price", this.state.price); // 18版本以下在setTimeou或原生DOM事件中是同步的
     }, 0);
@@ -71,7 +75,7 @@ class ClassComp extends Component {
     return (
       <>
         <div className="component">
-          <h2>演示class组件中useState不同的用法</h2>
+          <h2>演示class组件中useState不同的用法。</h2>
           <button onClick={this.increase2}>价钱+1： {price}</button>
           <div>演示setState</div>
           <ul>
@@ -81,7 +85,7 @@ class ClassComp extends Component {
             <li>在组件生命周期或React合成事件中, setState是异步的</li>
             <li>在setTimeou或原生DOM事件中, setState是同步的</li>
             <li style={{ color: "#f50" }}>
-              18则不分场景全部批处理，除非使用特别的API：flushSync
+              18则不分场景全部批处理（也就是异步的），除非使用特别的API：flushSync
             </li>
           </ul>
         </div>
