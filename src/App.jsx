@@ -7,7 +7,8 @@ import { FunComp, ClassComp } from './components/useState';
 import UseLayoutEffect from './components/useLayoutEffect';
 import CreatePortal from './components/createPortal';
 import SyncUseState from './components/同步useState';
-
+import TestContextComp from "./components/useContext";
+import TestContestChild from "./components/useContext/childComp";
 const fakeAccounts = [
   {
     id: 1,
@@ -37,6 +38,9 @@ function App(props) {
       <UseLayoutEffect />
       <CreatePortal />
       <SyncUseState />
+      <TestContextComp >
+        <TestContestChild />
+      </TestContextComp>
     </div>
   );
 }
