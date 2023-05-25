@@ -7,7 +7,7 @@ function UseLayoutEffect() {
       setValue(10 + Math.random() * 200);
     }
   }, [value]);
-  console.log("render", value);
+  // console.log("render", value);
 
   return (
     <div className="component">

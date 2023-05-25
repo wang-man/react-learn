@@ -5,7 +5,7 @@ import './index.scss';
 import { useEffect } from 'react';
 const Modal = ({ visible, onClose }) => {
   const [show, setShow] = useState(visible);
-  console.log('visible', visible);
+  // console.log('visible', visible);
 
   useEffect(() => {
     setShow(visible);

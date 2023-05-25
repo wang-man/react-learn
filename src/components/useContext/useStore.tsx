@@ -27,6 +27,7 @@ function reducer(state: TestState, action: TestAction): TestState {
 
 function useStore() {
   const [state, dispatch] = useReducer(reducer, { name: 'man', age: 20 })
+  // console.log('state', state)
   return {
     state,
     dispatch

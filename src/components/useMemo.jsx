@@ -6,7 +6,7 @@ function Parent() {
 
   // useMemo返回的不是组件，要么是react的element，要么是其他简单数据类型，因此不能直接作为标签使用
   const memo_child = useMemo(function () {
-    console.log("render2..."); // 只会打印一次
+    // console.log("render2..."); // 只会打印一次
     return (
       <>
         <div style={{ color: "#f50" }}>这是useMemo包装的子组件</div>

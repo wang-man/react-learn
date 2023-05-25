@@ -12,12 +12,13 @@ const useSyncCallback = callback => {
     setProxyState({ current: true })
   }, [proxyState])
 
+  // 这个钩子仅仅是为了让
   useEffect(() => {
     if (proxyState.current === true) setProxyState({ current: false })
   }, [proxyState])
 
   useEffect(() => {
-    // console.log(proxyState.current)
+    console.log('testttttt')  // 会执行两次，首次执行，Func执行后，current改变
     proxyState.current && callback()
   })
 
