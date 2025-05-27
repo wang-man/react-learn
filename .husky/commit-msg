@@ -1,0 +1,16 @@
+commit_msg=`cat $1`
+
+msg_re="(^(feat|fix|docs|style|refactor|test|chore|revert): .{1,100})|(^Merge .*branch [\s\S]*)|(^Revert [\s\S]*)"
+
+if [[ ! $commit_msg =~ $msg_re ]]
+then
+	echo "Commit message does not follow the pattern: $msg_re , eg:
+	feat(CARCN-1479): add comments
+	fix(CARCN-1478): handle events on blur (close #28)
+	Please reference the git commit documentation : https://porschedigital.atlassian.net/wiki/spaces/TECHCN/pages/6496256003/Git+Commit+policy+including+Frontend+and+Backend"
+
+	# 异常退出
+	exit 1
+fi
+
+
