@@ -12,9 +12,15 @@ function FunComp() {
       return prev + 1;
     });
   };
+
+  // 使用函数式更新，能解决批处理的问题
   const increase2 = () => {
-    setPrice(price + 1);
-    setPrice(price + 1);
+    setPrice(price=>{
+      return price+1
+    });
+    setPrice(price=>{
+      return price+1
+    });
   };
   const increase3 = () => {
     setTimeout(() => {
@@ -34,7 +40,7 @@ function FunComp() {
   return (
     <div className="component">
       <h2>演示函数组件中useState不同的用法</h2>
-      <button onClick={increase3}>价钱+1： {price}</button>
+      <button onClick={increase2}>价钱+1： {price}</button>
       <div>演示useState异步的问题及其不同用法</div>
       <div>
         React
